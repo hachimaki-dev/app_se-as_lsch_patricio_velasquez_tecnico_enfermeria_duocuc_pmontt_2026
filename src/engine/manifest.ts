@@ -17,8 +17,11 @@ let cachedManifest: AssetManifest | null = null;
 export async function loadManifest(): Promise<AssetManifest> {
   if (cachedManifest) return cachedManifest;
 
+  const baseUrl = import.meta.env.BASE_URL;
+  const manifestUrl = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}manifest.json`;
+
   try {
-    const response = await fetch('/manifest.json');
+    const response = await fetch(manifestUrl);
     if (!response.ok) {
       throw new Error(`Error cargando manifest: ${response.status}`);
     }
@@ -29,7 +32,7 @@ export async function loadManifest(): Promise<AssetManifest> {
     // Retornar manifest vacío como fallback
     return {
       version: '0.0',
-      basePath: '/videos/',
+      basePath: 'videos/', // Relativo al base de Vite
       tokens: { phrases: {}, words: {}, letters: {} },
     };
   }
@@ -69,10 +72,15 @@ export function findLetter(manifest: AssetManifest, char: string): string | null
  * Construye la URL completa de un archivo de video.
  */
 export function getVideoUrl(manifest: AssetManifest, filename: string): string {
-  const basePath = manifest.basePath.endsWith('/') 
-    ? manifest.basePath 
-    : manifest.basePath + '/';
-  return `${basePath}${encodeURIComponent(filename)}`;
+  const baseUrl = import.meta.env.BASE_URL;
+  const basePath = manifest.basePath.startsWith('/') 
+    ? manifest.basePath.slice(1) 
+    : manifest.basePath;
+    
+  const fullBasePath = `${baseUrl.endsWith('/') ? baseUrl : baseUrl + '/'}${basePath}`;
+  const finalPath = fullBasePath.endsWith('/') ? fullBasePath : fullBasePath + '/';
+  
+  return `${finalPath}${encodeURIComponent(filename)}`;
 }
 
 /**
