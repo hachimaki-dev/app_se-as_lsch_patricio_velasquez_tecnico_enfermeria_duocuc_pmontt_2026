@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "basePath": "/videos/",
+  "tokens": {
+    "phrases": {
+      "buenos dias": "Buenos días.mp4",
+      "buenas tardes": "Buenas Tardes.mp4",
+      "buenas noches": "Buenas Noches.mp4",
+      "nos vemos": "Nos Vemos.mp4",
+      "por favor": "Por favor.mp4",
+      "por que": "Por qué.mp4",
+      "nombre en senas": "Nombre en señas.mp4"
+    },
+    "words": {
+      "hola": "Hola.mp4",
+      "chao": "Chao.mp4",
+      "bano": "Baño.mp4",
+      "calor": "Calor.mp4",
+      "contento": "Contento.mp4",
+      "cuidado": "Cuidado.mp4",
+      "cual": "Cuál.mp4",
+      "deletrear": "Deletrear.mp4",
+      "disculpa": "Disculpa.mp4",
+      "entender": "Entender.mp4",
+      "feliz": "Feliz.mp4",
+      "frio": "Frío.mp4",
+      "hay": "Hay.mp4",
+      "hermoso": "Hermoso.mp4",
+      "lento": "Lento.mp4",
+      "no": "No.mp4",
+      "nombre": "Nombre.mp4",
+      "perdon": "Perdón.mp4",
+      "permiso": "Permiso.mp4",
+      "rapido": "Rapido.mp4",
+      "repetir": "Repetir.mp4",
+      "triste": "Triste.mp4"
+    },
+    "letters": {
+      "a": "A.mp4",
+      "b": "B.mp4",
+      "c": "C.mp4",
+      "d": "D.mp4",
+      "e": "E.mp4",
+      "f": "F.mp4",
+      "g": "G.mp4",
+      "h": "H.mp4",
+      "i": "I.mp4",
+      "o": "O.mp4",
+      "p": "P.mp4",
+      "q": "Q.mp4",
+      "r": "R.mp4",
+      "s": "S.mp4",
+      "t": "T.mp4",
+      "u": "U.mp4",
+      "v": "V.mp4",
+      "w": "W.mp4",
+      "x": "X.mp4",
+      "y": "Y.mp4",
+      "z": "Z.mp4"
+    }
+  }
+}

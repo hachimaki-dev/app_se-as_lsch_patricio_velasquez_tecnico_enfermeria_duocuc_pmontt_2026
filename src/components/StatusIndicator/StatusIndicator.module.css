@@ -1,0 +1,86 @@
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+.status-indicator.idle {
+  background: var(--surface-elevated);
+  color: var(--text-muted);
+}
+
+.status-indicator.loading {
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+}
+
+.status-indicator.ready {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-indicator.playing {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+}
+
+.status-indicator.paused {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+}
+
+.status-indicator.finished {
+  background: rgba(99, 102, 241, 0.12);
+  color: #818cf8;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-indicator.idle .status-dot {
+  background: var(--text-muted);
+}
+
+.status-indicator.loading .status-dot {
+  background: #60a5fa;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.status-indicator.ready .status-dot {
+  background: #34d399;
+}
+
+.status-indicator.playing .status-dot {
+  background: #34d399;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.status-indicator.paused .status-dot {
+  background: #fbbf24;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-indicator.finished .status-dot {
+  background: #818cf8;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

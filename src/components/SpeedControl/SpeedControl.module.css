@@ -1,0 +1,66 @@
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.speed-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.speed-label svg {
+  width: 14px;
+  height: 14px;
+}
+
+.speed-options {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  overflow-x: auto;
+  padding: 4px 2px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.speed-options::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.speed-btn {
+  min-width: 50px;
+  padding: 8px 6px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.speed-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.speed-btn:active {
+  transform: scale(0.95);
+}
+
+.speed-btn.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
